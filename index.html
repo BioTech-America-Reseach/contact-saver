@@ -5,20 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Saver AI</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #212529; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .container { background-color: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); padding: 30px; width: 100%; max-width: 650px; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; 
+            color: #212529; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+        .container { 
+            background-color: #ffffff; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1); 
+            padding: 30px; 
+            width: 100%; 
+            max-width: 650px; 
+        }
         h2 { margin-top: 0; color: #0f172a; text-align: center; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
-        input[type="text"], textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
-        textarea { height: 160px; resize: vertical; }
-        button { background-color: #0d6efd; color: white; border: none; padding: 14px 20px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; }
+        input[type="text"], textarea { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 8px; 
+            font-size: 14px; 
+            box-sizing: border-box; 
+        }
+        textarea { height: 180px; resize: vertical; }
+        button { 
+            background-color: #0d6efd; 
+            color: white; 
+            border: none; 
+            padding: 14px 20px; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            width: 100%; 
+        }
         button:hover { background-color: #0b5ed7; }
         .status-box { margin-top: 20px; padding: 15px; border-radius: 8px; font-size: 14px; display: none; }
         .status-box.info { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; display: block; }
         .status-box.success { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; display: block; }
         .status-box.error { background-color: #f8d7da; color: #842029; border: 1px solid #f5c2c7; display: block; }
-        .instructions { background-color: #f1f5f9; padding: 15px; border-radius: 8px; font-size: 13px; color: #475569; margin-bottom: 20px; }
+        .instructions { 
+            background-color: #f1f5f9; 
+            padding: 15px; 
+            border-radius: 8px; 
+            font-size: 13px; 
+            color: #334155; 
+            margin-bottom: 20px; 
+            line-height: 1.6;
+        }
+        .example-code {
+            background: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: monospace;
+            display: block;
+            margin-top: 5px;
+            white-space: pre-wrap;
+            color: #0f172a;
+        }
     </style>
 </head>
 <body>
@@ -27,10 +79,16 @@
     <h2>Contact Saver AI Web</h2>
 
     <div class="instructions">
-        <b>Jinsi ya Kutumia:</b><br>
-        1. Weka Mistral API Key yako hapa chini.<br>
+        <b> Hatua za Kutumia:</b><br>
+        1. Weka Mistral API Key yako.<br>
         2. Bandika orodha ya majina na namba.<br>
-        3. Bonyeza kitufe cha kuhifadhi.
+        3. Bonyeza kitufe cha kuhifadhi.<br><br>
+        <b> Mfano wa Usahihi wa Kuandaa Contacts (Namba 5):</b>
+        <span class="example-code">1. LC NJOMBE LUSY MSINA - 0617162589
+2. LC NJOMBE FATUMA JUMWA - 0626529573
+3. LC KP MASHARIKI AMITHA KISELEMA - 0718224874
+4. LC MBAGALA FATUMA SAIDI - 0712545754
+5. LC MBAGALA HADIJA MFACUME - 0679992917</span>
     </div>
 
     <div class="form-group">
@@ -40,7 +98,7 @@
 
     <div class="form-group">
         <label for="rawText">Orodha ya Majina na Namba:</label>
-        <textarea id="rawText" placeholder="Bandika orodha ya majina na namba zako hapa..."></textarea>
+        <textarea id="rawText" placeholder="Bandika orodha yako ya majina na namba hapa...&#10;&#10;Mfano:&#10;1. LC NJOMBE LUSY MSINA - 0617162589&#10;2. LC NJOMBE FATUMA JUMWA - 0626529573&#10;3. LC KP MASHARIKI AMITHA KISELEMA - 0718224874"></textarea>
     </div>
 
     <button id="saveBtn" onclick="processContacts()">Hifadhi Kwenye Google Contacts</button>
